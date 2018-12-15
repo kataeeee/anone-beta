@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "/inquiries/new" => "inquiries#new"
+  post "/inquiries/create" => "inquiries#create"
+
 end

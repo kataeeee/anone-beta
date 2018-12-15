@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  q1_sex: 1
+  q2_sexual_orientation: 1
+  q3_gender: 1
+  q4_partner: 1
+  q5_sexual_experience: 1
+
+two:
+  user_id: 1
+  q1_sex: 1
+  q2_sexual_orientation: 1
+  q3_gender: 1
+  q4_partner: 1
+  q5_sexual_experience: 1

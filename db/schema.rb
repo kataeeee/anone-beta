@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_072047) do
+ActiveRecord::Schema.define(version: 2018_12_15_075637) do
+
+  create_table "basics", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "q1_sex"
+    t.integer "q2_sexual_orientation"
+    t.integer "q3_gender"
+    t.integer "q4_partner"
+    t.integer "q5_sexual_experience"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
