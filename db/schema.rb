@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_075637) do
+ActiveRecord::Schema.define(version: 2018_12_15_120536) do
 
   create_table "basics", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 2018_12_15_075637) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "genders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "q6_gender_fitting"
+    t.integer "q7_body_fitting"
+    t.integer "q8_favorite_dress"
+    t.integer "q9_choose_middle"
+    t.integer "q10_personal_time"
+    t.integer "q11_sensibility"
+    t.integer "q12_behavior_adjusting"
+    t.integer "q13_group_comfort"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -31,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_12_15_075637) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender_result"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

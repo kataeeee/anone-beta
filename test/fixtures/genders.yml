@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  q6_gender_fitting: 1
+  q7_body_fitting: 1
+  q8_favorite_dress: 1
+  q9_choose_middle: 1
+  q10_personal_time: 1
+  q11_sensibility: 1
+  q12_behavior_adjusting: 1
+  q13_group_comfort: 1
+
+two:
+  user_id: 1
+  q6_gender_fitting: 1
+  q7_body_fitting: 1
+  q8_favorite_dress: 1
+  q9_choose_middle: 1
+  q10_personal_time: 1
+  q11_sensibility: 1
+  q12_behavior_adjusting: 1
+  q13_group_comfort: 1
