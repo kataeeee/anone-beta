@@ -111,15 +111,33 @@ class InquiriesController < ApplicationController
       elsif array.index(max) == 3
         current_user.sexual_result_2 = "フレイセクシャル"
       elsif array.index(max) == 4
-        current_user.sexual_result_2 = "サピオアンドロセクシャル"
+        current_user.sexual_result_2 = "サピオセクシャル"
       else
         current_user.sexual_result_2 = "ガイネ・アンドロセクシャル"
       end
     end
 
-    current_user.save
-
+    cis_ap_score = (params[:q6_gender_fitting][0].to_i*2 + params[:q10_personal_time][0].to_i + params[:q12_behavior_adjusting][0].to_i*2)/4
+    trans_ap_score = (params[:q6_gender_fitting][1].to_i*2 + params[:q10_personal_time][1].to_i + params[:q12_behavior_adjusting][1].to_i*2)/4
+    x_ap_score = (params[:q6_gender_fitting][2].to_i*2 + params[:q10_personal_time][2].to_i + params[:q11_sensibility][2].to_i/2 + params[:q12_behavior_adjusting][2].to_i*2 + params[:q13_group_comfort][2].to_i*2)/6
+    if params[:q1_sex] != params[:q8_favorite_dress]
+      cis_ap_score += 2/4
+    elsif params[:q1_sex] != params[:q8_favorite_dress]
+      trans_ap_score += 2/6
+    elsif params[:q8_favorite_dress] == "両性"
+      x_ap_score += 2/4
+    end
+    array = [cis_ap_score, trans_ap_score,x_ap_score]
+    max = array.max
+    if array.index(max) == 0
+      current_user.appearance_result = "シスジェンダー"
+    elsif array.index(max) == 1
+      current_user.appearance_result = "トランスジェンダー"
+    elsif array.index(max) == 2
+      current_user.appearance_result = "Xジェンダー"
+    end
     #表現したい性
+    current_user.save
 
     redirect_to("/")
 
