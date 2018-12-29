@@ -1,111 +1,360 @@
 <%= form_tag("/inquiries/create") do %>
   <div class="basic-wrapper">
     <h1>基本情報</h1>
-    <h3>①生まれたときの性</h3>
+    <h3>生まれたときのからだ</h3>
     <ul>
-      <li><input type="radio" name="q1_sex" value=1>男</li>
-      <li><input type="radio" name="q1_sex" value=2>女</li>
+      <li><input type="radio" name="q1_sex" value="男"><br>男</li>
+      <li><input type="radio" name="q1_sex" value="女"><br>女</li>
     </ul>
 
-    <h3>②まったくの異性愛者かどうか</h3>
+    <h3>まったくの異性愛者かどうか</h3>
     <ul>
-      <li><input type="radio" name="q2_sexual_orientation" value=1>そうではない</li>
+      <li><input type="radio" name="q2_sexual_orientation" value=1><br>そうではない</li>
       <li><input type="radio" name="q2_sexual_orientation" value=2></li>
       <li><input type="radio" name="q2_sexual_orientation" value=3></li>
-      <li><input type="radio" name="q2_sexual_orientation" value=4>そうである</li>
+      <li><input type="radio" name="q2_sexual_orientation" value=4><br>そうである</li>
     </ul>
 
-    <h3>③まったくの男性/女性かどうか</h3>
+    <h3>まったくの男性/女性かどうか</h3>
     <ul>
-      <li><input type="radio" name="q3_gender" value=1>そうではない</li>
+      <li><input type="radio" name="q3_gender" value=1><br>そうではない</li>
       <li><input type="radio" name="q3_gender" value=2></li>
       <li><input type="radio" name="q3_gender" value=3></li>
-      <li><input type="radio" name="q3_gender" value=4>そうである</li>
+      <li><input type="radio" name="q3_gender" value=4><br>そうである</li>
     </ul>
 
-    <h3>④パートナーの人数</h3>
+    <h3>パートナーの人数</h3>
     <ul>
-      <li><input type="radio" name="q4_partner" value=1>パートナーシップを持ったことがない</li>
-      <li><input type="radio" name="q4_partner" value=2>1人〜5人</li>
-      <li><input type="radio" name="q4_partner" value=3>6人〜10人</li>
-      <li><input type="radio" name="q4_partner" value=4>それ以上</li>
+      <li><input type="radio" name="q4_partner" value=[4,4,0,0,0]><br>パートナーシップを持ったことがない</li>
+      <li><input type="radio" name="q4_partner" value=[4,4,4,0,0]><br>1人〜5人</li>
+      <li><input type="radio" name="q4_partner" value=[0,0,0,4,4]><br>6人〜10人以上</li>
     </ul>
 
-    <h3>⑤セックスの経験数</h3>
+    <h3>セックスの経験数</h3>
     <ul>
-      <li><input type="radio" name="q5_sexual_experience" value=1>関係を持ったことがない</li>
-      <li><input type="radio" name="q5_sexual_experience" value=2>1人〜5人</li>
-      <li><input type="radio" name="q5_sexual_experience" value=3>6人〜10人</li>
-      <li><input type="radio" name="q5_sexual_experience" value=4>それ以上</li>
+      <li><input type="radio" name="q5_sexual_experience" value=[4,4,0,0,0,0]><br>関係を持ったことがない</li>
+      <li><input type="radio" name="q5_sexual_experience" value=[0,0,4,0,0,0]><br>1人〜5人</li>
+      <li><input type="radio" name="q5_sexual_experience" value=[0,0,0,0,0,4]><br>6人〜10人以上</li>
+    </ul>
+
+    <h3>セックスの属性</h3>
+    <ul>
+      <li><input type="radio" name="b_sex_attribute" value="男"><br>男性</li>
+      <li><input type="radio" name="b_sex_attribute" value="女"><br>女性</li>
+      <li><input type="radio" name="b_sex_attribute" value="両性"><br>両性</li>
+      <li><input type="radio" name="b_sex_attribute" value="その他"><br>その他</li>
+    </ul>
+
+    <h3>好きな男/女のタイプがいる</h3>
+    <ul>
+      <li><input type="radio" name="b_type_person" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="b_type_person" value=2></li>
+      <li><input type="radio" name="b_type_person" value=3></li>
+      <li><input type="radio" name="b_type_person" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>パートナーの属性</h3>
+    <ul>
+      <li><input type="radio" name="b_partner_attribute" value="男"><br>男性</li>
+      <li><input type="radio" name="b_partner_attribute" value="女"><br>女性</li>
+      <li><input type="radio" name="b_partner_attribute" value="両性"><br>両性</li>
+      <li><input type="radio" name="b_partner_attribute" value="その他"><br>その他</li>
     </ul>
   </div>
 
   <div class="gender-wrapper">
     <h1>心の性</h1>
-    <h3>⑥男/女らしさに違和感を感じることがある</h3>
+    <h3>男/女らしさに違和感を感じることがある</h3>
     <ul>
-      <li><input type="radio" name="q6_gender_fitting" value=1>当てはまらない</li>
+      <li><input type="radio" name="q6_gender_fitting" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q6_gender_fitting" value=2></li>
       <li><input type="radio" name="q6_gender_fitting" value=3></li>
-      <li><input type="radio" name="q6_gender_fitting" value=4>当てはまる</li>
+      <li><input type="radio" name="q6_gender_fitting" value=4><br>当てはまる</li>
     </ul>
 
-    <h3>⑦自分の体つきに違和感を感じることがある</h3>
+    <h3>自分の体つきに違和感を感じることがある</h3>
     <ul>
-      <li><input type="radio" name="q7_body_fitting" value=1>当てはまらない</li>
+      <li><input type="radio" name="q7_body_fitting" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q7_body_fitting" value=2></li>
       <li><input type="radio" name="q7_body_fitting" value=3></li>
-      <li><input type="radio" name="q7_body_fitting" value=4>当てはまる</li>
+      <li><input type="radio" name="q7_body_fitting" value=4><br>当てはまる</li>
     </ul>
 
-    <h3>⑧好きな服装を選択</h3>
+    <h3>好きな服装を選択</h3>
     <ul>
-      <li><input type="radio" name="q8_favorite_dress" value=1>服装１</li>
-      <li><input type="radio" name="q8_favorite_dress" value=2>服装２</li>
-      <li><input type="radio" name="q8_favorite_dress" value=3>服装３</li>
-      <li><input type="radio" name="q8_favorite_dress" value=4>服装４</li>
+      <li><input type="radio" name="q8_favorite_dress" value=1><br>服装１</li>
+      <li><input type="radio" name="q8_favorite_dress" value=2><br>服装２</li>
+      <li><input type="radio" name="q8_favorite_dress" value=3><br>服装３</li>
+      <li><input type="radio" name="q8_favorite_dress" value=4><br>服装４</li>
     </ul>
 
-    <h3>⑨可能なら性別欄の「男・女」の間にある「・」に丸をつけたい</h3>
+    <h3>可能なら性別欄の「男・女」の間にある「・」に丸をつけたい</h3>
     <ul>
-      <li><input type="radio" name="q9_choose_middle" value=1>当てはまらない</li>
+      <li><input type="radio" name="q9_choose_middle" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q9_choose_middle" value=2></li>
       <li><input type="radio" name="q9_choose_middle" value=3></li>
-      <li><input type="radio" name="q9_choose_middle" value=4>当てはまる</li>
+      <li><input type="radio" name="q9_choose_middle" value=4><br>当てはまる</li>
     </ul>
 
-    <h3>⑩ひとりの時間が何よりも大切</h3>
+    <h3>ひとりの時間が何よりも大切</h3>
     <ul>
-      <li><input type="radio" name="q10_personal_time" value=1>当てはまらない</li>
+      <li><input type="radio" name="q10_personal_time" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q10_personal_time" value=2></li>
       <li><input type="radio" name="q10_personal_time" value=3></li>
-      <li><input type="radio" name="q10_personal_time" value=4>当てはまる</li>
+      <li><input type="radio" name="q10_personal_time" value=4><br>当てはまる</li>
     </ul>
 
-    <h3>⑪感受性が強い</h3>
+    <h3>感受性が強い</h3>
     <ul>
-      <li><input type="radio" name="q11_sensibility" value=1>当てはまらない</li>
+      <li><input type="radio" name="q11_sensibility" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q11_sensibility" value=2></li>
       <li><input type="radio" name="q11_sensibility" value=3></li>
-      <li><input type="radio" name="q11_sensibility" value=4>当てはまる</li>
+      <li><input type="radio" name="q11_sensibility" value=4><br>当てはまる</li>
     </ul>
 
-    <h3>⑫誰と話すかで言葉遣いや振る舞いが変わることがある</h3>
+    <h3>誰と話すかで言葉遣いや振る舞いが変わることがある</h3>
     <ul>
-      <li><input type="radio" name="q12_behavior_adjusting" value=1>当てはまらない</li>
+      <li><input type="radio" name="q12_behavior_adjusting" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q12_behavior_adjusting" value=2></li>
       <li><input type="radio" name="q12_behavior_adjusting" value=3></li>
-      <li><input type="radio" name="q12_behavior_adjusting" value=4>当てはまる</li>
+      <li><input type="radio" name="q12_behavior_adjusting" value=4><br>当てはまる</li>
     </ul>
 
-    <h3>⑬男の子/女の子の大勢グループが苦手</h3>
+    <h3>男の子/女の子の大勢グループが苦手</h3>
     <ul>
-      <li><input type="radio" name="q13_group_comfort" value=1>当てはまらない</li>
+      <li><input type="radio" name="q13_group_comfort" value=1><br>当てはまらない</li>
       <li><input type="radio" name="q13_group_comfort" value=2></li>
       <li><input type="radio" name="q13_group_comfort" value=3></li>
-      <li><input type="radio" name="q13_group_comfort" value=4>当てはまる</li>
+      <li><input type="radio" name="q13_group_comfort" value=4><br>当てはまる</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>恋愛的指向</h1>
+    <h3>自認しているこころの性にもっとも近いもの</h3>
+    <ul>
+      <li><input type="radio" name="q_self_gender" value="男"><br>男</li>
+      <li><input type="radio" name="q_self_gender" value="女"><br>女</li>
     </ul>
 
+    <h3>自分のことがあまり好きになれない</h3>
+    <ul>
+      <li><input type="radio" name="r_1" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_1" value=2></li>
+      <li><input type="radio" name="r_1" value=3></li>
+      <li><input type="radio" name="r_1" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>告白された瞬間は嬉しいと感じるが時間がたつとだんだんいやな気持ちになる</h3>
+    <ul>
+      <li><input type="radio" name="r_2" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_2" value=2></li>
+      <li><input type="radio" name="r_2" value=3></li>
+      <li><input type="radio" name="r_2" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>他の人から恋愛や性の対象として見られることに抵抗がある</h3>
+    <ul>
+      <li><input type="radio" name="r_3" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_3" value=2></li>
+      <li><input type="radio" name="r_3" value=3></li>
+      <li><input type="radio" name="r_3" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>いつか恋愛できるかもと思うがイメージはない</h3>
+    <ul>
+      <li><input type="radio" name="r_4" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_4" value=2></li>
+      <li><input type="radio" name="r_4" value=3></li>
+      <li><input type="radio" name="r_4" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>特定の人をいいなと思うが付き合いたいとは思わない位</h3>
+    <ul>
+      <li><input type="radio" name="r_5" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_5" value=2></li>
+      <li><input type="radio" name="r_5" value=3></li>
+      <li><input type="radio" name="r_5" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>他人への執着が薄い方だ</h3>
+    <ul>
+      <li><input type="radio" name="r_6" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_6" value=2></li>
+      <li><input type="radio" name="r_6" value=3></li>
+      <li><input type="radio" name="r_6" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>独自の世界観が強い</h3>
+    <ul>
+      <li><input type="radio" name="r_7" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_7" value=2></li>
+      <li><input type="radio" name="r_7" value=3></li>
+      <li><input type="radio" name="r_7" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>友情から始まる恋が多い</h3>
+    <ul>
+      <li><input type="radio" name="r_8" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_8" value=2></li>
+      <li><input type="radio" name="r_8" value=3></li>
+      <li><input type="radio" name="r_8" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>ひとめぼれすることは滅多にない</h3>
+    <ul>
+      <li><input type="radio" name="r_9" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_9" value=2></li>
+      <li><input type="radio" name="r_9" value=3></li>
+      <li><input type="radio" name="r_9" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>同じ部屋で寝ても何も起こらないと思える友人がいる</h3>
+    <ul>
+      <li><input type="radio" name="r_10" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_10" value=2></li>
+      <li><input type="radio" name="r_10" value=3></li>
+      <li><input type="radio" name="r_10" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>基本的に自分からしか人を好きにならない</h3>
+    <ul>
+      <li><input type="radio" name="r_11" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_11" value=2></li>
+      <li><input type="radio" name="r_11" value=3></li>
+      <li><input type="radio" name="r_11" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>外見より内面にひかれることの方が多い</h3>
+    <ul>
+      <li><input type="radio" name="r_13" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_13" value=2></li>
+      <li><input type="radio" name="r_13" value=3></li>
+      <li><input type="radio" name="r_13" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>基本的に人を好きになるハードルが高い</h3>
+    <ul>
+      <li><input type="radio" name="r_14" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_14" value=2></li>
+      <li><input type="radio" name="r_14" value=3></li>
+      <li><input type="radio" name="r_14" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>できることならみんな好きでいたいと思う</h3>
+    <ul>
+      <li><input type="radio" name="r_15" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_15" value=2></li>
+      <li><input type="radio" name="r_15" value=3></li>
+      <li><input type="radio" name="r_15" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>友情と恋愛がたまにわからなくなることがある</h3>
+    <ul>
+      <li><input type="radio" name="r_16" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="r_16" value=2></li>
+      <li><input type="radio" name="r_16" value=3></li>
+      <li><input type="radio" name="r_16" value=4><br>当てはまる</li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>性的指向</h1>
+    <h3>パートナーと長く付き合っていると性的欲求がなくなった経験がある</h3>
+    <ul>
+      <li><input type="radio" name="s_1" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_1" value=2></li>
+      <li><input type="radio" name="s_1" value=3></li>
+      <li><input type="radio" name="s_1" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>マニアックで知的な趣味や仕事がある</h3>
+    <ul>
+      <li><input type="radio" name="s_2" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_2" value=2></li>
+      <li><input type="radio" name="s_2" value=3></li>
+      <li><input type="radio" name="s_2" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>SNSはInstagramよりもどちらかというとTwitter</h3>
+    <ul>
+      <li><input type="radio" name="s_3" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_3" value=2></li>
+      <li><input type="radio" name="s_3" value=3></li>
+      <li><input type="radio" name="s_3" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>世間話よりも教養のある会話が好き</h3>
+    <ul>
+      <li><input type="radio" name="s_4" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_4" value=2></li>
+      <li><input type="radio" name="s_4" value=3></li>
+      <li><input type="radio" name="s_4" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>人の思想や哲学の話を聞くのが何よりも好きだ</h3>
+    <ul>
+      <li><input type="radio" name="s_5" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_5" value=2></li>
+      <li><input type="radio" name="s_5" value=3></li>
+      <li><input type="radio" name="s_5" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>セックスは「本当に好きな人」とだけしたい</h3>
+    <ul>
+      <li><input type="radio" name="s_6" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_6" value=2></li>
+      <li><input type="radio" name="s_6" value=3></li>
+      <li><input type="radio" name="s_6" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>他の人とべたべたするのに抵抗がある</h3>
+    <ul>
+      <li><input type="radio" name="s_7" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_7" value=2></li>
+      <li><input type="radio" name="s_7" value=3></li>
+      <li><input type="radio" name="s_7" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>まわりのセックスに興味がある人の気持ちがわからない</h3>
+    <ul>
+      <li><input type="radio" name="s_8" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_8" value=2></li>
+      <li><input type="radio" name="s_8" value=3></li>
+      <li><input type="radio" name="s_8" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>同性の友人の中にセックスしてもいいと思える相手がいる</h3>
+    <ul>
+      <li><input type="radio" name="s_9" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_9" value=2></li>
+      <li><input type="radio" name="s_9" value=3></li>
+      <li><input type="radio" name="s_9" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>好きな人とセックスするのであればどんな性別であろうと気にしないと思える</h3>
+    <ul>
+      <li><input type="radio" name="s_10" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_10" value=2></li>
+      <li><input type="radio" name="s_10" value=3></li>
+      <li><input type="radio" name="s_10" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>好きな人とセックスする姿を想像するのが嫌だ</h3>
+    <ul>
+      <li><input type="radio" name="s_11" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_11" value=2></li>
+      <li><input type="radio" name="s_11" value=3></li>
+      <li><input type="radio" name="s_11" value=4><br>当てはまる</li>
+    </ul>
+
+    <h3>自分に男性or女性としての自身があまりない</h3>
+    <ul>
+      <li><input type="radio" name="s_12" value=1><br>当てはまらない</li>
+      <li><input type="radio" name="s_12" value=2></li>
+      <li><input type="radio" name="s_12" value=3></li>
+      <li><input type="radio" name="s_12" value=4><br>当てはまる</li>
+    </ul>
   </div>
 
   <input type="submit" value="診断する">

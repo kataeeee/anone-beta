@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  s_1: 1
+  s_2: 1
+  s_3: 1
+  s_4: 1
+  s_5: 1
+  s_6: 1
+  s_7: 1
+  s_8: 1
+  s_9: 1
+  s_10: 1
+  s_11: 1
+  s_12: 1
+
+two:
+  s_1: 1
+  s_2: 1
+  s_3: 1
+  s_4: 1
+  s_5: 1
+  s_6: 1
+  s_7: 1
+  s_8: 1
+  s_9: 1
+  s_10: 1
+  s_11: 1
+  s_12: 1

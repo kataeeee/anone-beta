@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_15_120536) do
+ActiveRecord::Schema.define(version: 2018_12_29_084153) do
 
   create_table "basics", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 2018_12_15_120536) do
     t.integer "q5_sexual_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "b_type_person"
+    t.string "b_partner_attribute"
+    t.string "q_self_gender"
+    t.string "b_sex_attribute"
   end
 
   create_table "genders", force: :cascade do |t|
@@ -37,6 +41,44 @@ ActiveRecord::Schema.define(version: 2018_12_15_120536) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "romantics", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "r_1"
+    t.integer "r_2"
+    t.integer "r_3"
+    t.integer "r_4"
+    t.integer "r_5"
+    t.integer "r_6"
+    t.integer "r_7"
+    t.integer "r_8"
+    t.integer "r_9"
+    t.integer "r_10"
+    t.integer "r_11"
+    t.integer "r_13"
+    t.integer "r_14"
+    t.integer "r_15"
+    t.integer "r_16"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sexuals", force: :cascade do |t|
+    t.integer "s_1"
+    t.integer "s_2"
+    t.integer "s_3"
+    t.integer "s_4"
+    t.integer "s_5"
+    t.integer "s_6"
+    t.integer "s_7"
+    t.integer "s_8"
+    t.integer "s_9"
+    t.integer "s_10"
+    t.integer "s_11"
+    t.integer "s_12"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,6 +88,13 @@ ActiveRecord::Schema.define(version: 2018_12_15_120536) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gender_result"
+    t.string "romantic_result"
+    t.string "sexual_result"
+    t.string "appearance_result"
+    t.string "romantic_result_1"
+    t.string "romantic_result_2"
+    t.string "sexual_result_1"
+    t.string "sexual_result_2"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

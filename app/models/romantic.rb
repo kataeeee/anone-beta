@@ -1,0 +1,2 @@
+class Romantic < ApplicationRecord
+end
