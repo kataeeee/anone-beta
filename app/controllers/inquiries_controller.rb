@@ -94,7 +94,7 @@ class InquiriesController < ApplicationController
       elsif array.index(max) == 2
         current_user.romantic_result_2 = "デミロマンティック"
       elsif array.index(max) == 3
-        current_user.romantic_result_2 = "ポリアモリーロマンティック"
+        current_user.romantic_result_2 = "ポリアモリー"
       else
         current_user.romantic_result_2 = "ガイネ・アンドロセクシャル"
       end
