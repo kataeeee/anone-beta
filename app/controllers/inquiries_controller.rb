@@ -13,7 +13,9 @@ class InquiriesController < ApplicationController
         q4_partner: params[:q4_partner],
         q5_sexual_experience: params[:q5_sexual_experience],
         b_type_person: params[:b_type_person],
-        b_partner_attribute: params[:b_partner_attribute]
+        b_partner_attribute: params[:b_partner_attribute],
+        q_self_gender: params[:q_self_gender],
+        b_sex_attribute: params[:b_sex_attribute]
     )
     @basic.save
 
@@ -40,6 +42,25 @@ class InquiriesController < ApplicationController
     end
 
     #恋愛的指向
+    @romantic = Romantic.new(
+        r_1:params[:r_1],
+        r_2:params[:r_2],
+        r_3:params[:r_3],
+        r_4:params[:r_4],
+        r_5:params[:r_5],
+        r_6:params[:r_6],
+        r_7:params[:r_7],
+        r_8:params[:r_8],
+        r_9:params[:r_9],
+        r_10:params[:r_10],
+        r_11:params[:r_11],
+        r_13:params[:r_13],
+        r_14:params[:r_14],
+        r_15:params[:r_15],
+        r_16:params[:r_16]
+    )
+    @romantic.save
+
     if params[:q_self_gender] == "男" && params[:q_self_gender] == params[:b_partner_attribute]
       current_user.romantic_result_1 = "ゲイ"
     elsif params[:q_self_gender] == "女" && params[:q_self_gender] == params[:b_partner_attribute]
@@ -80,6 +101,22 @@ class InquiriesController < ApplicationController
     end
 
     #性的指向
+    @sexual = Sexual.new(
+        s_1:params[:s_1],
+        s_2:params[:s_2],
+        s_3:params[:s_3],
+        s_4:params[:s_4],
+        s_5:params[:s_5],
+        s_6:params[:s_6],
+        s_7:params[:s_7],
+        s_8:params[:s_8],
+        s_9:params[:s_9],
+        s_10:params[:s_10],
+        s_11:params[:s_11],
+        s_12:params[:s_12]
+    )
+    @sexual.save
+
     if params[:q_self_gender] == "男" && params[:q_self_gender] == params[:b_sex_attribute]
       current_user.sexual_result_1 = "ゲイ"
     elsif params[:q_self_gender] == "女" && params[:q_self_gender] == params[:b_sex_attribute]
@@ -117,6 +154,7 @@ class InquiriesController < ApplicationController
       end
     end
 
+    #表現したい性
     cis_ap_score = (params[:q6_gender_fitting][0].to_i*2 + params[:q10_personal_time][0].to_i + params[:q12_behavior_adjusting][0].to_i*2)/4
     trans_ap_score = (params[:q6_gender_fitting][1].to_i*2 + params[:q10_personal_time][1].to_i + params[:q12_behavior_adjusting][1].to_i*2)/4
     x_ap_score = (params[:q6_gender_fitting][2].to_i*2 + params[:q10_personal_time][2].to_i + params[:q11_sensibility][2].to_i/2 + params[:q12_behavior_adjusting][2].to_i*2 + params[:q13_group_comfort][2].to_i*2)/6
@@ -136,14 +174,34 @@ class InquiriesController < ApplicationController
     elsif array.index(max) == 2
       current_user.appearance_result = "Xジェンダー"
     end
-    #表現したい性
+
+    current_user.save
+
+    #全体での割合
+    ratio_gender = User.where(gender_result: current_user.gender_result).count/User.all.count
+    ratio_romantic_1 = User.where(romantic_result_1: current_user.romantic_result_1).count/User.all.count
+    ratio_romantic_2 = User.where(romantic_result_2: current_user.romantic_result_2).count/User.all.count
+    ratio_sexual_1 = User.where(sexual_result_1: current_user.sexual_result_1).count/User.all.count
+    ratio_sexual_2 = User.where(sexual_result_2: current_user.sexual_result_2).count/User.all.count
+    ratio_appearance = User.where(appearance_result: current_user.appearance_result).count/User.all.count
+
+    current_user.ratio_gender = ratio_gender.truncate(3)*100
+    current_user.ratio_romantic_1 = ratio_romantic_1.truncate(3)*100
+    current_user.ratio_romantic_2 = ratio_romantic_2.truncate(3)*100
+    current_user.ratio_sexual_1 = ratio_sexual_1.truncate(3)*100
+    current_user.ratio_sexual_2 = ratio_sexual_2.truncate(3)*100
+    current_user.ratio_appearance = ratio_appearance.truncate(3)*100
+
     current_user.save
 
     redirect_to("/")
-
   end
 
   def edit
+
+  end
+
+  def update
 
   end
 end

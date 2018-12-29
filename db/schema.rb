@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_29_084153) do
+ActiveRecord::Schema.define(version: 2018_12_29_152531) do
 
   create_table "basics", force: :cascade do |t|
     t.integer "user_id"
@@ -95,6 +95,12 @@ ActiveRecord::Schema.define(version: 2018_12_29_084153) do
     t.string "romantic_result_2"
     t.string "sexual_result_1"
     t.string "sexual_result_2"
+    t.integer "ratio_gender"
+    t.integer "ratio_romantic_1"
+    t.integer "ratio_romantic_2"
+    t.integer "ratio_sexual_1"
+    t.integer "ratio_sexual_2"
+    t.integer "ratio_appearance"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

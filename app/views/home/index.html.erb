@@ -2,9 +2,17 @@
 <p>##################</p>
 <% if current_user.gender_result != nil %>
   <p>こころの性：<%= current_user.gender_result %></p>
-  <p>恋愛的指向：<%= current_user.romantic_result_1 %>で<%= current_user.romantic_result_2 %></p>
-  <p>性的指向：<%= current_user.sexual_result_1 %>で<%= current_user.sexual_result_2 %></p>
+  <p>全体での割合：<%= current_user.ratio_gender %>％</p>
+  <p>恋愛的指向（対象）：<%= current_user.romantic_result_1 %></p>
+  <p>全体での割合：<%= current_user.ratio_romantic_1 %>％</p>
+  <p>恋愛的指向（プロセス）：<%= current_user.romantic_result_2 %></p>
+  <p>全体での割合：<%= current_user.ratio_romantic_2 %>％</p>
+  <p>性的指向（対象）：<%= current_user.sexual_result_1 %></p>
+  <p>全体での割合：<%= current_user.ratio_sexual_1 %>％</p>
+  <p>性的指向（プロセス）：<%= current_user.sexual_result_2 %></p>
+  <p>全体での割合：<%= current_user.ratio_sexual_2 %>％</p>
   <p>表現したい性：<%= current_user.appearance_result %></p>
+  <p>全体での割合：<%= current_user.ratio_appearance %>％</p>
   <a href="#">もう一度診断する（まだできてないよ）</a>
 <% else %>
   <a href="/inquiries/new">診断してみる</a>
