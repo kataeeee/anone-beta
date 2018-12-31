@@ -12,27 +12,61 @@
       <!--<% if current_user.gender_result != nil %>-->
       <div class="result">
         <div class="result-square">
-          <p>こころの性：テストテスト</p>
+          <h3 class="result-square-title">こころの性</h3>
+          <p class="result-square-text">テスト</p>
+          <div class="result-ratio">
+            <h3>全体での割合</h3>
+            <p class="result-square-ratio">テスト%</p>
+          </div>
         </div>
         <div class="result-square">
-          <p>恋愛的指向（対象）：テスト</p>
-          <p>恋愛的指向（プロセス）：テスト</p>
+          <h3 class="result-square-title">恋愛的指向</h3>
+          <h4 class="result-square-subtitle">対象</h4>
+          <p class="result-square-text">テスト</p>
+          <h4 class="result-square-subtitle">プロセス</h4>
+          <p class="result-square-text">テスト</p>
+          <div class="result-ratio">
+            <h3>全体での割合</h3>
+            <p class="result-square-ratio">テスト%</p>
+          </div>
         </div>
         <div class="result-square">
-          <p>性的指向（対象）：テスト</p>
-          <p>性的指向（プロセス）：テスト</p>
+          <h3 classs="result-square-title">性的指向</h3>
+          <h4 class="result-square-subtitle">対象</h4>
+          <p class="result-square-text">テスト</p>
+          <h4 class="result-square-subtitle">プロセス</h4>
+          <p class="result-square-text">テスト</p>
+          <div class="result-ratio">
+            <h3>全体での割合</h3>
+            <p class="result-square-ratio">テスト%</p>
+          </div>
         </div>
         <div class="result-square">
-          <p>表現したい性：テスト</p>
+          <h3 class="result-square-title">表現したい性</h3>
+          <p class="result-square-text">テスト</p>
+          <div>
+            <h3>全体での割合</h3>
+            <p class="result-square-ratio">テスト%</p>
+          </div>
         </div>
       </div>
-        <a href="#">もう一度診断する（まだできてないよ）</a>
+      <div class="others">
+        <div class="link">
+          <a href="#">もう一度診断する（まだできてないよ）</a>
+        </div>
         <!--<% else %>-->
-        <a href="/inquiries/new">診断してみる</a>
+        <div class="link">
+          <a href="/inquiries/new">診断してみる</a>
+        </div>
         <!--<% end %>-->
         <!--<p>##################</p>-->
-        <a href="https://goo.gl/forms/EfGpBfa6sr3RTUSJ2" target="_blank">アンケートに回答する</a>
-        <br><a href="https://anone-beta.herokuapp.com/users/edit">ユーザー情報編集</a>
+        <div class="link">
+          <a href="https://goo.gl/forms/EfGpBfa6sr3RTUSJ2" target="_blank">アンケートに回答する</a>
+        </div>
+        <div class="link">
+          <a href="https://anone-beta.herokuapp.com/users/edit">ユーザー情報編集</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
