@@ -1,5 +1,13 @@
+body{
+  margin:auto;
+}
+
 h1{
-  background-color:#ffdbde;
+  width:100%;
+  background-color:#feece2;
+}
+h1,h2,h3,h4,p{
+  color:#4b4b4b;
 }
 .title{
 text-align: center;
@@ -8,16 +16,69 @@ text-align: center;
   text-align: center;
 }
 .result{
-  width:1800px;
+  text-align: center;
+  display:flex;
+}
+.result h3{
+  font-size:15px;
+}
+.result h4{
+  font-size:13px;
 }
 .result-square{
-  width:300px;
-  height:300px;
+  width:25%;
+  height:310px;
   margin:20px;
-  background-color:#e5e5e5;
+  background-color:#f3f4f7;
   text-align: center;
   float:left;
 }
+@media(max-width:600px){
+  .result-square{
+    width:50%;
+  }
+}
 .result-square p{
-  margin:80px 80px;
+  margin:auto;
+  text-align: center;
+  vertical-align:middle;
+  font-size:12px;
+}
+.result-square-title{
+  text-align: center;
+}
+.result-square-subtitle{
+  text-align: center;
+}
+.result-square-text{
+  text-align: center;
+   position: relative;
+   display: inline-block;
+   font-weight: bold;
+   padding: 0.25em 0;
+   text-decoration: none;
+   color: #4b4b4b;
+}
+
+.result-square-text:before{
+   position: absolute;
+   content: '';
+   width: 100%;
+   height: 4px;
+   top:100%;
+   left: 0;
+   border-radius: 3px;
+   background:#4b4b4b;
+   transition: .2s;
+}
+
+.result-square-text:hover:before {
+    top: -webkit-calc(100% - 3px);
+    top: calc(100% - 3px);
+}
+.others{
+  float:left;
+}
+.link{
+  padding:10px 10px;
 }
